@@ -1,12 +1,12 @@
-let circle = {
-    radius: 9,
-    location: {
-        x: 9,
-        y: 9
-    },
-    draw: function() {
-        console.log('draw');
-    }
+//factories
+function createCircle(radius) {
+    return {
+        radius: radius,
+        draw: function() {
+            console.log('draw');
+        }
+    };
 }
 
+const circle = createCircle(9);
 circle.draw();
