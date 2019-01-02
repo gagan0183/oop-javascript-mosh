@@ -35,6 +35,24 @@ let circle1 = new Function('radius', `
     }
 `);
 
+//value types
+var num = 9;
+function increment(num) {
+    num++;
+}
+
+increment(num);
+console.log(num);
+
+//reference types
+var object = { value: 9 };
+function incrementval(object) {
+    object.value++;
+}
+
+incrementval(object);
+console.log(object.value);
+
 //call and apply function
 Circle.call({}, 9);
 Circle.apply({}, [9]);
