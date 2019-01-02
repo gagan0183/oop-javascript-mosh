@@ -18,6 +18,8 @@ function createCircle(radius) {
 function Circle(radius) {
     console.log(this);
 
+    let defaultLocation = {x : 9, y: 9};
+
     //implement abstraction it is not accessible outside of this function
     let calculateOptimumLocation = function() {
         console.log('calculate optimum location');
@@ -28,6 +30,16 @@ function Circle(radius) {
         console.log('draw');
     }
 
+    //read only properties
+    // also can set the value using setter method
+    Object.defineProperty(this, 'defaultLocation', {
+        get: function() {
+            return defaultLocation;
+        },
+        set: function(value) {
+            defaultLocation = value;
+        }
+    });
     // The below statement is implicit
     //return this
 }
