@@ -17,8 +17,14 @@ function createCircle(radius) {
 // 3. return this object from the function p
 function Circle(radius) {
     console.log(this);
+
+    //implement abstraction it is not accessible outside of this function
+    let calculateOptimumLocation = function() {
+        console.log('calculate optimum location');
+    }
     this.radius = radius;
     this.draw = function() {
+        calculateOptimumLocation();
         console.log('draw');
     }
 
