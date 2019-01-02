@@ -24,6 +24,19 @@ function Circle(radius) {
 
     // The below statement is implicit
     //return this
-} 
+}
+
+//functions are objects
+// Function is a constructor used to create object
+let circle1 = new Function('radius', `
+    this.radius = radius;
+    this.draw = function() {
+        console.log('draw');
+    }
+`);
+
+//call and apply function
+Circle.call({}, 9);
+Circle.apply({}, [9]);
 
 const circle = new Circle(9);
