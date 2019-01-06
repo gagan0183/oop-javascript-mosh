@@ -1,12 +1,13 @@
-function Shape() {
-
+function Shape(color) {
+    this.color = color;
 }
 
 Shape.prototype.duplicate = function() {
     console.log('duplicate');
 }
 
-function Circle(radius) {
+function Circle(radius, color) {
+    Shape.call(this, color);
     this.radius = radius;
 }
 
@@ -19,4 +20,4 @@ Circle.prototype.draw = function() {
 }
 
 const s = new Shape();
-const c = new Circle(1);
+const c = new Circle(1, 'p');
