@@ -1,16 +1,13 @@
-class Circle {
-    constructor(radius) {
-        this.radius = radius;
-        //instance method
-        this.move = function() {
+'use strict';
 
-        }
-    }
-
-    //prototype method
-    draw() {
+const Circle = function() {
+    this.draw = function() {
+        console.log(this);
         console.log('draw');
     }
 }
 
-const p = new Circle(9);
+const c = new Circle();
+c.draw();
+const value = c.draw;
+value();
